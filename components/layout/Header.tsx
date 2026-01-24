@@ -33,12 +33,10 @@ export default function Header() {
               Products
             </a>
             <a
-              href="https://community.islandbitcoin.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#newsletter"
               className="text-sm font-medium px-4 py-2 bg-white text-black rounded-full hover:bg-white/90 transition-colors duration-300"
             >
-              Join Us
+              Get Updates
             </a>
           </nav>
 

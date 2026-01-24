@@ -42,12 +42,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   Products
                 </a>
                 <a
-                  href="https://community.islandbitcoin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#newsletter"
+                  onClick={onClose}
                   className="mt-4 px-6 py-3 bg-white text-black rounded-full font-semibold text-center hover:bg-white/90 transition-colors"
                 >
-                  Join Us
+                  Get Updates
                 </a>
               </nav>
             </motion.div>
