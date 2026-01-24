@@ -102,27 +102,27 @@ export default function Home() {
   const pillars = [
     {
       title: 'Community',
-      description: 'Organizing meetups, educating merchants, and building a sovereign Bitcoin community across the Caribbean.',
+      description: 'Building a sovereign community to provide our families with more freedom.',
       icon: <Icons.Community />,
       link: 'https://community.islandbitcoin.com',
       linkText: 'Join the meetup',
     },
     {
       title: 'Mining',
-      description: 'Harnessing renewable energy in tropical climates. Sustainable, sovereign hashing power from paradise.',
+      description: 'Harnessing renewable energy in the tropics to free our access to energy.',
       icon: <Icons.Lightning />,
       linkText: 'Coming soon',
     },
     {
       title: 'Infrastructure',
-      description: 'The ultimate Bitcoin & Lightning infrastructure. Buy, sell, spend, and earn rewards in one app.',
+      description: 'Building the rails for free and open access to the global economy.',
       icon: <Icons.Wallet />,
       link: 'https://getflash.io',
       linkText: 'Get Flash',
     },
     {
       title: 'Foundation',
-      description: 'Our non-profit arm providing Bitcoin services and financial freedom to those who need it most.',
+      description: 'Empowering people to give and receive freely through charitable activities.',
       icon: <Icons.Heart />,
       linkText: 'Coming soon',
     },
@@ -296,7 +296,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Flash Wallet Product Card */}
+            {/* Flash Product Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -313,7 +313,7 @@ export default function Home() {
                   <div className="flex items-center gap-3 mb-4">
                     <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold rounded-full uppercase tracking-wider">Featured</span>
                   </div>
-                  <h3 className="text-3xl font-bold mb-4">Flash Wallet</h3>
+                  <h3 className="text-3xl font-bold mb-4">Flash</h3>
                   <p className="text-white/60 text-lg mb-8 max-w-md">
                     The easiest way to send, receive, and spend Bitcoin in the Caribbean. 
                     Self-custodial, lightning-fast, and built for paradise.
@@ -370,9 +370,6 @@ export default function Home() {
                 journey today.
               </span>
             </h2>
-            <p className="text-lg text-white/50 mb-10 max-w-xl mx-auto">
-              The easiest way to use Bitcoin in the Caribbean.
-            </p>
             <a
               href="https://community.islandbitcoin.com"
               target="_blank"
