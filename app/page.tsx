@@ -52,9 +52,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12"
           >
-            Building the circular Bitcoin economy in the Caribbean.
-            <br className="hidden sm:block" />
-            Energy independence, community adoption, bitcoin infrastructure — we are sovereign.
+            Bitcoin sovereignty for the Caribbean.
           </motion.p>
 
           <motion.div

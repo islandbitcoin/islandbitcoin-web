@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Island Bitcoin | Building the Circular Bitcoin Economy",
-  description: "Building the circular Bitcoin economy in the Caribbean. Energy independence, community adoption, bitcoin infrastructure — we are sovereign.",
+  description: "Bitcoin sovereignty for the Caribbean. Community, energy, infrastructure — powered by Bitcoin.",
   keywords: ["Bitcoin", "Caribbean", "Lightning Network", "Flash Wallet", "Island Bitcoin", "Bitcoin adoption"],
   openGraph: {
     title: "Island Bitcoin | Building the Circular Bitcoin Economy",
-    description: "Building the circular Bitcoin economy in the Caribbean. Energy independence, community adoption, bitcoin infrastructure — we are sovereign.",
+    description: "Bitcoin sovereignty for the Caribbean. Community, energy, infrastructure — powered by Bitcoin.",
     type: "website",
     locale: "en_US",
     siteName: "Island Bitcoin",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Island Bitcoin | Building the Circular Bitcoin Economy",
-    description: "Building the circular Bitcoin economy in the Caribbean. Energy independence, community adoption, bitcoin infrastructure — we are sovereign.",
+    description: "Bitcoin sovereignty for the Caribbean. Community, energy, infrastructure — powered by Bitcoin.",
   },
 };
 
