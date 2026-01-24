@@ -121,7 +121,7 @@ export default function Home() {
       linkText: 'Coming soon',
     },
     {
-      title: 'Flash Wallet',
+      title: 'Infrastructure',
       description: 'The ultimate Bitcoin & Lightning infrastructure. Buy, sell, spend, and earn rewards in one app.',
       icon: <Icons.Wallet />,
       link: 'https://getflash.io',
@@ -133,12 +133,6 @@ export default function Home() {
       icon: <Icons.Heart />,
       linkText: 'Coming soon',
     },
-  ];
-
-  const stats = [
-    { value: '8+', label: 'Islands' },
-    { value: '500+', label: 'Members' },
-    { value: '21M', label: 'Sats moved' },
   ];
 
   return (
@@ -165,7 +159,7 @@ export default function Home() {
               Community
             </a>
             <a href="https://getflash.io" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors duration-300">
-              Flash
+              Products
             </a>
             <a
               href="https://community.islandbitcoin.com"
@@ -260,30 +254,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="grid grid-cols-3 divide-x divide-white/10"
-          >
-            {stats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={fadeInUp}
-                className="py-12 text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-white/40 uppercase tracking-wider">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Mission Section */}
       <section id="mission" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
@@ -333,14 +303,14 @@ export default function Home() {
         >
           <div className="border border-white/10 rounded-3xl p-12 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to join the
+              Start your Bitcoin
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                revolution?
+                journey today.
               </span>
             </h2>
             <p className="text-lg text-white/50 mb-10 max-w-xl mx-auto">
-              Be part of the circular Bitcoin economy. Meet us in paradise.
+              The easiest way to use Bitcoin in the Caribbean.
             </p>
             <a
               href="https://community.islandbitcoin.com"
