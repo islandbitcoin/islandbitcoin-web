@@ -54,7 +54,7 @@ export default function Home() {
           >
             Building the circular Bitcoin economy in the Caribbean.
             <br className="hidden sm:block" />
-            From adoption to infrastructure — we are sovereign.
+            Energy independence, community adoption, bitcoin infrastructure — we are sovereign.
           </motion.p>
 
           <motion.div
