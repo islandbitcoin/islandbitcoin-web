@@ -204,7 +204,7 @@ export default function Home() {
            transition={{ duration: 0.6 }}
            className="max-w-4xl mx-auto text-center"
          >
-           <div className="border border-white/10 rounded-3xl p-12 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
+           <div className="border border-white/10 rounded-3xl p-6 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
              <h2 className="text-3xl md:text-5xl font-bold mb-6">
                Start your Bitcoin
                <br />
@@ -214,14 +214,14 @@ export default function Home() {
              </h2>
              <div className="mb-8">
                <p className="text-white/60 text-sm mb-4">Monthly dispatches on Caribbean Bitcoin adoption.</p>
-               <iframe
-                 src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
-                 className="beehiiv-embed w-full max-w-xl rounded-2xl border border-white/10 bg-black mx-auto"
-                 frameBorder="0"
-                 scrolling="no"
-                 title="Island Bitcoin Newsletter"
-                 style={{ height: '320px' }}
-               />
+                <iframe
+                  src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
+                  className="beehiiv-embed w-full max-w-xl rounded-2xl border border-white/10 bg-black mx-auto"
+                  frameBorder="0"
+                  scrolling="no"
+                  title="Island Bitcoin Newsletter"
+                  style={{ height: '320px', width: '100% !important' }}
+                />
              </div>
              <a
                href="https://community.islandbitcoin.com"
