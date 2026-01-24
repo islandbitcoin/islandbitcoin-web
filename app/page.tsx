@@ -202,26 +202,26 @@ export default function Home() {
            transition={{ duration: 0.6 }}
            className="max-w-4xl mx-auto text-center"
          >
-           <div className="border border-white/10 rounded-3xl p-6 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
-             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-               Start your Bitcoin
-               <br />
-               <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                 journey today.
-               </span>
-             </h2>
-              <div>
-                <p className="text-white/60 text-sm mb-4">Monthly dispatches on Caribbean Bitcoin adoption.</p>
-                 <iframe
-                   src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
-                   className="beehiiv-embed w-full md:max-w-xl rounded-2xl border border-white/10 bg-black mx-auto"
-                   frameBorder="0"
-                   scrolling="no"
-                   title="Island Bitcoin Newsletter"
-                   style={{ minHeight: '520px', height: '520px', width: '100%' }}
-                 />
-              </div>
-           </div>
+           <div className="border border-white/10 rounded-3xl p-4 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Start your Bitcoin
+                <br />
+                <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  journey today.
+                </span>
+              </h2>
+               <div className="-mx-4 md:mx-0">
+                 <p className="text-white/60 text-sm mb-4 px-4 md:px-0">Monthly dispatches on Caribbean Bitcoin adoption.</p>
+                  <iframe
+                    src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
+                    className="beehiiv-embed w-full md:max-w-xl md:rounded-2xl md:border border-white/10 bg-black md:mx-auto"
+                    frameBorder="0"
+                    scrolling="no"
+                    title="Island Bitcoin Newsletter"
+                    style={{ minHeight: '520px', height: '520px', width: '100%' }}
+                  />
+               </div>
+            </div>
          </motion.div>
        </section>
 
