@@ -72,19 +72,12 @@ function PillarCard({
       className="group relative"
     >
       <div className="h-full border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
-        {/* Number */}
         <div className="text-white/20 text-sm font-mono mb-6">0{index + 1}</div>
-        
-        {/* Icon */}
         <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 text-white/60 group-hover:text-orange-400 group-hover:bg-orange-500/10 transition-all duration-300">
           {icon}
         </div>
-
-        {/* Content */}
         <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
         <p className="text-white/50 text-sm leading-relaxed mb-6">{description}</p>
-
-        {/* Link */}
         {link ? (
           <a
             href={link}
@@ -158,7 +151,7 @@ export default function Home() {
             <a href="https://community.islandbitcoin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors duration-300">
               Community
             </a>
-            <a href="https://getflash.io" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors duration-300">
+            <a href="#products" className="text-sm text-white/60 hover:text-white transition-colors duration-300">
               Products
             </a>
             <a
@@ -187,21 +180,19 @@ export default function Home() {
             <span className="text-xs text-white/60 uppercase tracking-wider">Building the future of money</span>
           </motion.div>
 
-          {/* Main Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          {/* Main Hero Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8"
+            className="mb-12 flex justify-center"
           >
-            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
-              Island
-            </span>
-            <br />
-            <span className="text-white">
-              Bitcoin
-            </span>
-          </motion.h1>
+            <img 
+              src="/logo-colored.svg" 
+              alt="Island Bitcoin" 
+              className="w-full max-w-xl h-auto"
+            />
+          </motion.div>
 
           {/* Tagline */}
           <motion.p
@@ -255,9 +246,8 @@ export default function Home() {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-32 px-6">
+      <section id="mission" className="py-32 px-6 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -277,7 +267,6 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Pillars Grid */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -289,6 +278,78 @@ export default function Home() {
               <PillarCard key={pillar.title} {...pillar} index={index} />
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
+            <p className="text-white/50">Tools for financial sovereignty.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Flash Wallet Product Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group col-span-1 md:col-span-2 relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] hover:border-orange-500/30 transition-all duration-500"
+            >
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <Icons.Wallet /> {/* Use as huge background icon */}
+              </div>
+              
+              <div className="p-10 flex flex-col h-full justify-between relative z-10">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold rounded-full uppercase tracking-wider">Featured</span>
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4">Flash Wallet</h3>
+                  <p className="text-white/60 text-lg mb-8 max-w-md">
+                    The easiest way to send, receive, and spend Bitcoin in the Caribbean. 
+                    Self-custodial, lightning-fast, and built for paradise.
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://getflash.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-white/90 transition-colors"
+                  >
+                    Get Flash
+                    <Icons.Arrow />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Coming Soon Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-3xl border border-white/5 bg-white/[0.01] p-10 flex flex-col justify-center items-center text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/[0.02]" />
+              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white/20">
+                <Icons.Lightning />
+              </div>
+              <h3 className="text-xl font-bold text-white/40 mb-2">More Coming Soon</h3>
+              <p className="text-white/30 text-sm">We are building the future infrastructure of money.</p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
