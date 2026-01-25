@@ -7,6 +7,7 @@ import { IconArrow } from '@/components/ui/icons';
 export default function PillarCard({
   title,
   description,
+  tagline,
   icon,
   link,
   linkText,
@@ -14,6 +15,7 @@ export default function PillarCard({
 }: {
   title: string;
   description: string;
+  tagline: string;
   icon: React.ReactNode;
   link?: string;
   linkText: string;
@@ -30,7 +32,8 @@ export default function PillarCard({
           {icon}
         </div>
         <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
-        <p className="text-white/50 text-sm leading-relaxed mb-6">{description}</p>
+        <p className="text-white/50 text-sm leading-relaxed mb-3">{description}</p>
+        <p className="text-white/30 text-xs italic mb-6">{tagline}</p>
         {link ? (
           <a
             href={link}

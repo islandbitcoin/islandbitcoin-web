@@ -1,7 +1,5 @@
 'use client';
 
-import { IconX } from '@/components/ui/icons';
-
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 py-12 px-6">
@@ -13,14 +11,6 @@ export default function Footer() {
           </span>
         </div>
         <div className="flex items-center gap-6">
-          <a
-            href="https://twitter.com/isaboricua"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white transition-colors duration-300"
-          >
-            <IconX />
-          </a>
           <a
             href="https://community.islandbitcoin.com"
             target="_blank"

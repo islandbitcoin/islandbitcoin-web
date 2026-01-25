@@ -3,6 +3,7 @@ import React from 'react';
 export interface Pillar {
   title: string;
   description: string;
+  tagline: string;
   icon: React.ReactNode;
   link?: string;
   linkText: string;
@@ -11,29 +12,33 @@ export interface Pillar {
 export const pillars: Pillar[] = [
   {
     title: 'Community',
-    description: 'Building a sovereign community to provide our families with more freedom.',
+    description: 'Cultivating a sovereign network of people who support one another and build toward collective freedom.',
+    tagline: 'Strong families. Local resilience. Shared purpose.',
     icon: null, // Will be replaced with IconCommunity component
     link: 'https://community.islandbitcoin.com',
-    linkText: 'Join the meetup',
+    linkText: 'Join the Meetup',
   },
   {
-    title: 'Mining',
-    description: 'Harnessing renewable energy in the tropics to free our access to energy.',
+    title: 'Energy & Mining',
+    description: 'Harnessing renewable energy in the tropics to unlock abundant, independent access to power and computation.',
+    tagline: 'Energy is the foundation of sovereignty.',
     icon: null, // Will be replaced with IconLightning component
-    linkText: 'Coming soon',
+    linkText: 'Coming Soon',
   },
   {
     title: 'Infrastructure',
-    description: 'Building the rails for free and open access to the global economy.',
+    description: 'Building open, censorship-resistant rails that connect our communities to the global economy.',
+    tagline: 'Freedom to earn. Freedom to transact. Freedom to build.',
     icon: null, // Will be replaced with IconWallet component
     link: 'https://getflash.io',
     linkText: 'Get Flash',
   },
   {
     title: 'Foundation',
-    description: 'Empowering people to give and receive freely through charitable activities.',
+    description: 'Creating pathways for people to give and receive freely, with dignity and transparency.',
+    tagline: 'Because true freedom is shared.',
     icon: null, // Will be replaced with IconHeart component
-    linkText: 'Coming soon',
+    linkText: 'Coming Soon',
   },
 ];
 

@@ -100,14 +100,14 @@ export default function Home() {
             className="max-w-3xl mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Four pillars of
+              The Four Pillars of
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                freedom
+                Freedom
               </span>
             </h2>
             <p className="text-lg text-white/50">
-              Our mission spans community, infrastructure, sustainability, and giving back.
+              A mission rooted in people, powered by infrastructure, and sustained by giving.
             </p>
           </motion.div>
 
