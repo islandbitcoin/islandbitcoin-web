@@ -35,6 +35,14 @@ export default function MissionStrategy() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
+            <div className="pb-4 border-b border-white/10">
+              <h3 className="text-lg font-semibold text-white mb-1">
+                Taddesse Inc.
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Parent company and holding entity for all Island Bitcoin subsidiaries.
+              </p>
+            </div>
             {subsidiaries.map((subsidiary, index) => (
               <motion.div
                 key={subsidiary.name}

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { latestNews, upcomingEvents } from '@/lib/investor-content';
 
 export default function NewsEvents() {
   return (
@@ -18,38 +17,9 @@ export default function NewsEvents() {
               Latest News
             </h2>
             
-            <div className="space-y-6">
-              {latestNews.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="pb-6 border-b border-white/10 last:border-0"
-                >
-                  <p className="text-sm text-white/40 mb-2">{item.date}</p>
-                  <h3 className="text-white/90 font-medium mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <a
-                    href={item.href}
-                    className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
-                  >
-                    Read More
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-            
-            <div className="mt-8">
-              <a
-                href="#"
-                className="inline-block px-5 py-2.5 border border-orange-500 text-orange-400 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm font-medium"
-              >
-                View all news
-              </a>
-            </div>
+            <p className="text-white/40 text-sm">
+              News and announcements coming soon.
+            </p>
           </motion.div>
           
           <motion.div
@@ -62,38 +32,9 @@ export default function NewsEvents() {
               Upcoming Events
             </h2>
             
-            <div className="space-y-6">
-              {upcomingEvents.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="pb-6 border-b border-white/10 last:border-0"
-                >
-                  <p className="text-sm text-white/40 mb-2">{item.date}</p>
-                  <h3 className="text-white/90 font-medium mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <a
-                    href={item.href}
-                    className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
-                  >
-                    {item.linkText}
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-            
-            <div className="mt-8">
-              <a
-                href="#"
-                className="inline-block px-5 py-2.5 border border-orange-500 text-orange-400 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm font-medium"
-              >
-                View all events
-              </a>
-            </div>
+            <p className="text-white/40 text-sm">
+              Events calendar coming soon.
+            </p>
           </motion.div>
         </div>
       </div>
