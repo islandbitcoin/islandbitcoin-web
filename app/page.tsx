@@ -210,11 +210,11 @@ export default function Home() {
                   journey today.
                 </span>
               </h2>
-               <div className="-mx-4 md:mx-0">
-                 <p className="text-white/60 text-sm mb-4 px-4 md:px-0">Monthly dispatches on Caribbean Bitcoin adoption.</p>
+               <div>
+                 <p className="text-white/60 text-sm mb-4">Monthly dispatches on Caribbean Bitcoin adoption.</p>
                   <iframe
                     src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
-                    className="beehiiv-embed md:mx-auto"
+                    className="beehiiv-embed"
                     data-test-id="beehiiv-embed"
                     frameBorder="0"
                     scrolling="no"
@@ -222,7 +222,7 @@ export default function Home() {
                     style={{
                       width: '560px',
                       height: '315px',
-                      margin: 0,
+                      margin: '0 auto',
                       borderRadius: 0,
                       backgroundColor: 'transparent',
                       boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
