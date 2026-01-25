@@ -33,6 +33,18 @@ export default function Footer() {
           >
             Investors
           </a>
+          <a
+            href="/privacy"
+            className="text-sm text-white/30 hover:text-white transition-colors duration-300"
+          >
+            Privacy
+          </a>
+          <a
+            href="/terms"
+            className="text-sm text-white/30 hover:text-white transition-colors duration-300"
+          >
+            Terms
+          </a>
         </div>
       </div>
     </footer>
