@@ -214,11 +214,20 @@ export default function Home() {
                  <p className="text-white/60 text-sm mb-4 px-4 md:px-0">Monthly dispatches on Caribbean Bitcoin adoption.</p>
                   <iframe
                     src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
-                    className="beehiiv-embed w-full md:max-w-xl md:rounded-2xl md:border border-white/10 bg-black md:mx-auto"
+                    className="beehiiv-embed md:mx-auto"
+                    data-test-id="beehiiv-embed"
                     frameBorder="0"
                     scrolling="no"
                     title="Island Bitcoin Newsletter"
-                    style={{ minHeight: '520px', height: '520px', width: '100%' }}
+                    style={{
+                      width: '560px',
+                      height: '315px',
+                      margin: 0,
+                      borderRadius: 0,
+                      backgroundColor: 'transparent',
+                      boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+                      maxWidth: '100%'
+                    }}
                   />
                </div>
             </div>
