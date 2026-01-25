@@ -47,7 +47,7 @@ export default function FinancialReports() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold text-center mb-12"
         >
-          Latest Quarter | Q4 2024
+          Latest Quarter | Q4 2025
         </motion.h2>
         
         <motion.div
@@ -73,6 +73,7 @@ export default function FinancialReports() {
               <span className="text-xs text-white/60 leading-tight">
                 {doc.title}
               </span>
+              <span className="text-[10px] text-white/30 mt-1">coming soon</span>
             </motion.a>
           ))}
         </motion.div>
