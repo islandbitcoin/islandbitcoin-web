@@ -27,6 +27,12 @@ export default function Footer() {
           >
             Flash
           </a>
+          <a
+            href="/investors"
+            className="text-sm text-white/30 hover:text-white transition-colors duration-300"
+          >
+            Investors
+          </a>
         </div>
       </div>
     </footer>
