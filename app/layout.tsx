@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://islandbitcoin.com"),
   title: "Island Bitcoin | Building the Circular Bitcoin Economy",
   description: "Bitcoin sovereignty for the Caribbean. Community, energy, infrastructure — powered by Bitcoin.",
   keywords: ["Bitcoin", "Caribbean", "Lightning Network", "Flash Wallet", "Island Bitcoin", "Bitcoin adoption"],
@@ -22,11 +23,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Island Bitcoin",
+    url: "https://islandbitcoin.com",
   },
   twitter: {
     card: "summary_large_image",
     title: "Island Bitcoin | Building the Circular Bitcoin Economy",
     description: "Bitcoin sovereignty for the Caribbean. Community, energy, infrastructure — powered by Bitcoin.",
+    creator: "@isaboricua",
   },
 };
 

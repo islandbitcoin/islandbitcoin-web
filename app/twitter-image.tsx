@@ -1,0 +1,118 @@
+import { ImageResponse } from 'next/og';
+
+export const runtime = 'edge';
+
+export const alt = 'Island Bitcoin - Building the Circular Bitcoin Economy';
+export const size = {
+  width: 1200,
+  height: 628,
+};
+export const contentType = 'image/png';
+
+export default async function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          background: 'linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%)',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }}
+        />
+        
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '40px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="120" height="120" viewBox="0 0 205 154" fill="none">
+              <path d="M59.14,44.81L0,1.84v8.52l55.21,40.11c1.19-1.97,2.5-3.87,3.93-5.67Z" fill="#ffb511"/>
+              <path d="M72.28,32.82L49.6,1.62h-8.52l25.66,35.32c1.75-1.48,3.6-2.86,5.53-4.12Z" fill="#ffb511"/>
+              <path d="M88.62,25.67l-7.82-24.06h-7.25l8.5,26.16c2.13-.84,4.32-1.54,6.56-2.11Z" fill="#ffb511"/>
+              <path d="M106.38,24.2V1.62h-7.01v22.58c1.16-.09,2.33-.14,3.5-.16,1.18.02,2.35.07,3.5.16Z" fill="#ffb511"/>
+              <path d="M164.68,1.62h-8.52l-22.67,31.21c1.93,1.26,3.78,2.63,5.53,4.12L164.68,1.62Z" fill="#ffb511"/>
+              <path d="M132.21,1.62h-7.25l-7.82,24.06c2.25.57,4.44,1.27,6.56,2.11l8.5-26.16Z" fill="#ffb511"/>
+              <path d="M50.57,60.25L0,43.82v7.25l48.66,15.81c.5-2.27,1.14-4.48,1.91-6.63Z" fill="#ffb511"/>
+              <path d="M157.1,66.88l48.66-15.81v-7.25l-50.57,16.43c.77,2.15,1.41,4.36,1.91,6.63Z" fill="#ffb511"/>
+              <path d="M150.55,50.47l55.21-40.11V1.84l-59.14,42.97c1.42,1.8,2.74,3.69,3.93,5.67Z" fill="#ffb511"/>
+              <path d="M102.88,30.91c-25.95,0-47.04,20.73-47.65,46.53H.49v6.89h204.79v-6.89h-54.74c-.61-25.8-21.7-46.53-47.65-46.53Z" fill="#ffb511"/>
+              <path d="M189.43,139.48h-22.98c-1.9,0-3.45-1.54-3.45-3.45h0c0-1.9,1.54-3.45,3.45-3.45h11.49c1.9,0,3.45-1.54,3.45-3.45v-6.89c0-1.9-1.54-3.45-3.45-3.45h-24.13c-1.9,0-3.45-1.54-3.45-3.45h0c0-1.9,1.54-3.45,3.45-3.45h14.36c1.9,0,3.45-1.54,3.45-3.45h0c0-1.9-1.54-3.45-3.45-3.45h-25.85c-1.9,0-3.45-1.54-3.45-3.45h0c0-1.9,1.54-3.45,3.45-3.45h4.6c1.9,0,3.45-1.54,3.45-3.45v-3.45H55.39s0,3.45,0,3.45c0,1.9,1.54,3.45,3.45,3.45h4.6c1.9,0,3.45,1.54,3.45,3.45h0c0,1.9-1.54,3.45-3.45,3.45h-25.85c-1.9,0-3.45,1.54-3.45,3.45h0c0,1.9,1.54,3.45,3.45,3.45h14.36c1.9,0,3.45,1.54,3.45,3.45h0c0,1.9-1.54,3.45-3.45,3.45h-24.13c-1.9,0-3.45,1.54-3.45,3.45v6.89c0,1.9,1.54,3.45,3.45,3.45h11.49c1.9,0,3.45,1.54,3.45,3.45h0c0,1.9-1.54,3.45-3.45,3.45h-22.98c-1.9,0-3.45,1.54-3.45,3.45h0c0,1.9-1.54,3.45-3.45,3.45H3.93c-1.9,0-3.45,1.54-3.45,3.45v3.45h204.79v-3.45c0-1.9-1.54-3.45-3.45-3.45h-5.5c-1.9,0-3.45-1.54-3.45-3.45h0c0-1.9-1.54-3.45-3.45-3.45Z" fill="#64b7e1"/>
+            </svg>
+          </div>
+          
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '16px',
+            }}
+          >
+            <div
+              style={{
+                fontSize: '72px',
+                fontWeight: 'bold',
+                color: 'white',
+                letterSpacing: '-2px',
+              }}
+            >
+              ISLAND BITCOIN
+            </div>
+            <div
+              style={{
+                fontSize: '28px',
+                background: 'linear-gradient(90deg, #f97316, #fbbf24)',
+                backgroundClip: 'text',
+                color: 'transparent',
+                fontWeight: '500',
+              }}
+            >
+              Building the Circular Bitcoin Economy
+            </div>
+          </div>
+        </div>
+        
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '40px',
+            fontSize: '20px',
+            color: 'rgba(255,255,255,0.5)',
+          }}
+        >
+          Bitcoin sovereignty for the Caribbean
+        </div>
+      </div>
+    ),
+    {
+      ...size,
+    }
+  );
+}
