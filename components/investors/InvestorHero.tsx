@@ -26,13 +26,12 @@ export default function InvestorHero() {
         >
           <div className="px-8 py-6 border-t border-b border-white/20">
             <div className="flex items-center justify-center gap-3 text-lg md:text-xl">
-              <span className="text-white/60">PRIVATE:</span>
-              <span className="font-semibold">ISLND</span>
-              <span className="text-2xl md:text-3xl font-bold text-orange-400">$0.001</span>
+              <span className="font-semibold">PRIVATE COMPANY</span>
+              <span className="text-2xl md:text-3xl font-bold text-orange-400">$0.970</span>
               <span className="text-white/40">0.00 (0.00%)</span>
             </div>
             <p className="text-sm text-white/40 mt-3">
-              Last updated: February 28, 2025 | 4:00 PM EST
+              Last updated: January 21, 2026 | 4:00 PM ET
             </p>
           </div>
         </motion.div>
