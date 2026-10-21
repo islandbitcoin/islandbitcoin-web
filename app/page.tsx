@@ -1,16 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PillarCard from '@/components/home/PillarCard';
-import { pillars, staggerContainer } from '@/lib/content';
+import Reveal from '@/components/ui/Reveal';
+import { pillars, stats, press } from '@/lib/content';
 import { IconCommunity, IconLightning, IconWallet, IconHeart, IconArrow } from '@/components/ui/icons';
 
 export default function Home() {
   const pillarsWithIcons = pillars.map((pillar, index) => ({
     ...pillar,
-    icon: index === 0 ? <IconCommunity /> : 
+    icon: index === 0 ? <IconCommunity /> :
           index === 1 ? <IconLightning /> :
           index === 2 ? <IconWallet /> : <IconHeart />
   }));
@@ -18,49 +18,31 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
-      
+
       <Header />
 
       <section className="relative min-h-screen flex items-center justify-center px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8"
-          >
+          <Reveal onScroll={false} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             <span className="text-xs text-white/60 uppercase tracking-wider">Building the future of money</span>
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-12 flex justify-center"
-          >
-            <img 
-              src="/logo-colored.svg" 
-              alt="Island Bitcoin" 
+          <Reveal onScroll={false} delay={0.1} className="mb-12 flex justify-center">
+            <img
+              src="/logo-colored.svg"
+              alt="Island Bitcoin"
               className="w-full max-w-xl h-auto"
             />
-          </motion.div>
+          </Reveal>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12"
-          >
-            Bitcoin sovereignty for the Caribbean.
-          </motion.p>
+          <Reveal onScroll={false} delay={0.2}>
+            <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12">
+              Bitcoin sovereignty for the Caribbean.
+            </p>
+          </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+          <Reveal onScroll={false} delay={0.3} className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#mission"
               className="px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full font-semibold text-black hover:opacity-90 transition-opacity duration-300"
@@ -73,32 +55,55 @@ export default function Home() {
             >
               Get Updates
             </a>
-          </motion.div>
+          </Reveal>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-16 bg-gradient-to-b from-white/0 via-white/20 to-white/0"
-          />
-        </motion.div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="w-px h-16 bg-gradient-to-b from-white/0 via-white/20 to-white/0 animate-pulse" />
+        </div>
+      </section>
+
+      {/* Proof strip: real numbers, real press */}
+      <section aria-label="Track record" className="py-20 px-6 border-b border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <Reveal>
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat) => (
+                <div key={stat.value + stat.label} className="text-center md:text-left">
+                  <dd className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent mb-2">
+                    {stat.value}
+                  </dd>
+                  <dt className="text-xs leading-relaxed text-white/40">{stat.label}</dt>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-sm text-white/40 mt-10 text-center md:text-left">
+              As covered by{' '}
+              {press.map((item, index) => (
+                <span key={item.outlet}>
+                  {index > 0 && (index === press.length - 1 ? ' and ' : ', ')}
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 underline decoration-white/20 underline-offset-4 hover:text-orange-400 transition-colors duration-300"
+                    title={item.title}
+                  >
+                    {item.outlet}
+                  </a>
+                </span>
+              ))}
+              .
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       <section id="mission" className="py-32 px-6 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-20"
-          >
+          <Reveal className="max-w-3xl mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               The Four Pillars of
               <br />
@@ -109,47 +114,29 @@ export default function Home() {
             <p className="text-lg text-white/50">
               A mission rooted in people, powered by infrastructure, and sustained by giving.
             </p>
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillarsWithIcons.map((pillar, index) => (
               <PillarCard key={pillar.title} {...pillar} index={index} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section id="products" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
+          <Reveal className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
             <p className="text-white/50">Tools for financial sovereignty.</p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="group col-span-1 md:col-span-2 relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] hover:border-orange-500/30 transition-all duration-500"
-            >
+            <Reveal className="group col-span-1 md:col-span-2 relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] hover:border-orange-500/30 transition-all duration-500">
               <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
                 <IconWallet />
               </div>
-              
+
               <div className="p-10 flex flex-col h-full justify-between relative z-10">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -157,11 +144,11 @@ export default function Home() {
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Flash</h3>
                   <p className="text-white/60 text-lg mb-8 max-w-md">
-                    The easiest way to send, receive, and spend Bitcoin in the Caribbean. 
+                    The easiest way to send, receive, and spend Bitcoin in the Caribbean.
                     Self-custodial, lightning-fast, and built for paradise.
                   </p>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="https://getflash.io"
@@ -174,64 +161,66 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-3xl border border-white/5 bg-white/[0.01] p-10 flex flex-col justify-center items-center text-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/[0.02]" />
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white/20">
+            <Reveal delay={0.1} className="group col-span-1 relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] hover:border-orange-500/30 transition-all duration-500">
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
                 <IconLightning />
               </div>
-              <h3 className="text-xl font-bold text-white/40 mb-2">More Coming Soon</h3>
-              <p className="text-white/30 text-sm">We are building the future infrastructure of money.</p>
-            </motion.div>
+
+              <div className="p-10 flex flex-col h-full justify-between relative z-10">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-white/10 text-white/60 text-xs font-bold rounded-full uppercase tracking-wider">Open Source</span>
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4">Atoll</h3>
+                  <p className="text-white/60 mb-8">
+                    Community app stores and Start9 / Umbrel packaging — sovereign
+                    infrastructure that normal people can actually run.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://github.com/islandbitcoin/atoll"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 font-semibold rounded-full hover:bg-white/5 transition-colors"
+                  >
+                    Explore on GitHub
+                    <IconArrow />
+                  </a>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
        <section id="newsletter" className="py-32 px-6">
-         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: '-100px' }}
-           transition={{ duration: 0.6 }}
-           className="max-w-4xl mx-auto text-center"
-         >
+         <Reveal className="max-w-4xl mx-auto text-center">
            <div className="border border-white/10 rounded-3xl p-4 md:p-20 bg-gradient-to-b from-white/[0.03] to-transparent">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Start your Bitcoin
-                <br />
-                <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                  journey today.
-                </span>
-              </h2>
-               <div>
-                 <p className="text-white/60 text-sm mb-4">Monthly dispatches on Caribbean Bitcoin adoption.</p>
-                  <iframe
-                    src="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
-                    className="beehiiv-embed"
-                    data-test-id="beehiiv-embed"
-                    frameBorder="0"
-                    scrolling="no"
-                    title="Island Bitcoin Newsletter"
-                    style={{
-                      width: '560px',
-                      height: '315px',
-                      margin: '0 auto',
-                      borderRadius: 0,
-                      backgroundColor: 'transparent',
-                      boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-                      maxWidth: '100%'
-                    }}
-                  />
-               </div>
-            </div>
-         </motion.div>
+             <h2 className="text-3xl md:text-5xl font-bold mb-6">
+               Start your Bitcoin
+               <br />
+               <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                 journey today.
+               </span>
+             </h2>
+              <div>
+                <p className="text-white/60 text-sm mb-8">Monthly dispatches on Caribbean Bitcoin adoption.</p>
+                <a
+                  href="https://subscribe-forms.beehiiv.com/091a2688-13dd-4e42-af26-397684e59816"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full font-semibold text-black hover:opacity-90 transition-opacity duration-300"
+                >
+                  Subscribe to the newsletter
+                  <IconArrow />
+                </a>
+              </div>
+           </div>
+         </Reveal>
        </section>
 
       <Footer />

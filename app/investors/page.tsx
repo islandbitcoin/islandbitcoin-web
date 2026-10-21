@@ -1,11 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import InvestorHero from '@/components/investors/InvestorHero';
 import MissionStrategy from '@/components/investors/MissionStrategy';
 import FinancialReports from '@/components/investors/FinancialReports';
 import NewsEvents from '@/components/investors/NewsEvents';
+
+export const metadata: Metadata = {
+  title: 'Investor Relations',
+  description:
+    'Mission, strategy, and financial reporting for Island Bitcoin and its subsidiaries.',
+};
 
 export default function InvestorsPage() {
   return (

@@ -19,7 +19,9 @@ islandbitcoin-web/
 │   ├── opengraph-image.tsx # Dynamic OG image generation
 │   ├── twitter-image.tsx   # Dynamic Twitter card image
 │   ├── icon.tsx            # Dynamic favicon
-│   └── apple-icon.tsx      # Dynamic Apple touch icon
+│   ├── apple-icon.tsx      # Dynamic Apple touch icon
+│   ├── robots.ts           # robots.txt generation
+│   └── sitemap.ts          # sitemap.xml generation
 ├── components/
 │   ├── home/
 │   │   └── PillarCard.tsx  # Reusable pillar card component
@@ -33,8 +35,10 @@ islandbitcoin-web/
 │   │   ├── Footer.tsx      # Site footer
 │   │   └── MobileMenu.tsx  # Mobile navigation
 │   └── ui/
-│       └── icons.tsx       # Icon components
+│       ├── icons.tsx       # Icon components
+│       └── Reveal.tsx      # No-JS-safe scroll/entrance reveal wrapper (framer-motion)
 ├── lib/
+│   ├── content.ts          # Homepage content data (pillars, stats, press)
 │   └── investor-content.ts # Investor page content data
 ├── public/                 # Static assets (SVGs, images)
 │   ├── logo-white.svg
@@ -49,9 +53,10 @@ islandbitcoin-web/
 The main landing page with:
 - **Header:** Fixed navigation with blur effect
 - **Hero:** Colored logo and value proposition
+- **Proof strip:** Real numbers (One Love Bitcoin, Flash users) + press mentions
 - **Mission:** "Four pillars of freedom" grid
-- **Products:** Flash Wallet showcase
-- **CTA:** Call to action section
+- **Products:** Flash Wallet showcase + Atoll (open source)
+- **CTA:** Newsletter link-out to beehiiv (no embedded third-party iframe)
 - **Footer:** Links and copyright
 
 ### Investor Relations (`/investors`)
@@ -77,11 +82,14 @@ Brand colors used: Purple (#7f42a1), Cream (#faf3db), Orange (#ffb511)
 
 ## Animations
 
-**Framer Motion** powers all animations:
-- `useScroll` / `useTransform`: Parallax effects
-- `whileInView`: Fade-in on scroll
-- `whileHover`: Interactive feedback
-- `staggerChildren`: Cascading grid animations
+**Framer Motion** powers all animations via `components/ui/Reveal.tsx`:
+- `whileInView`: Fade-in on scroll (via Reveal)
+- Entrance fades on mount for hero elements (via Reveal, `onScroll={false}`)
+- **Rule:** never render `opacity: 0` initial states in SSR HTML. All
+  motion elements must be wrapped in `Reveal`, which renders fully
+  visible markup until hydration, so no-JS visitors and crawlers always
+  see content. The old `fadeInUp`/`staggerContainer` variant pattern was
+  removed for this reason.
 
 ## Styling
 

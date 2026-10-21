@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import MobileMenu from './MobileMenu';
 
@@ -10,12 +9,7 @@ export default function Header() {
 
   return (
     <>
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50"
-      >
+      <header className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 <Link href="/" className="flex items-center">
           <img src="/logo-white.svg" alt="Island Bitcoin" className="h-8" />
@@ -51,7 +45,7 @@ export default function Header() {
             </svg>
           </button>
         </div>
-      </motion.header>
+      </header>
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   );

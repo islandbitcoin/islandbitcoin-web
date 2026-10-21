@@ -1,7 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'The terms governing your use of Island Bitcoin websites and services.',
+};
 
 export default function TermsPage() {
   return (

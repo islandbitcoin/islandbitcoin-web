@@ -23,7 +23,7 @@ export const pillars: Pillar[] = [
     description: 'Harnessing renewable energy in the tropics to unlock abundant, independent access to power and computation.',
     tagline: 'Energy is the foundation of sovereignty.',
     icon: null, // Will be replaced with IconLightning component
-    linkText: 'Coming Soon',
+    linkText: 'In development',
   },
   {
     title: 'Infrastructure',
@@ -38,20 +38,42 @@ export const pillars: Pillar[] = [
     description: 'Creating pathways for people to give and receive freely, with dignity and transparency.',
     tagline: 'Because true freedom is shared.',
     icon: null, // Will be replaced with IconHeart component
-    linkText: 'Coming Soon',
+    linkText: 'In development',
   },
 ];
 
-// Animation variants for Framer Motion
-export const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+export interface Stat {
+  value: string;
+  label: string;
+}
 
-export const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
+export const stats: Stat[] = [
+  { value: '26', label: 'Episodes of One Love Bitcoin, our documentary series, across 4 seasons' },
+  { value: '20+', label: 'Countries filmed, from El Salvador to Ethiopia to Palestine' },
+  { value: '6,000+', label: 'Flash users across the Caribbean' },
+  { value: '27,500+', label: 'Lightning merchants reachable through Flash' },
+];
+
+export interface PressMention {
+  outlet: string;
+  title: string;
+  href: string;
+}
+
+export const press: PressMention[] = [
+  {
+    outlet: 'Forbes',
+    title: "Jamaica's first native Bitcoin app is helping with hurricane relief",
+    href: 'https://www.forbes.com/sites/frankcorva/2025/11/20/jamaicas-first-native-bitcoin-app-is-helping-with-hurricane-relief/',
   },
-};
+  {
+    outlet: 'Breez',
+    title: 'Building on Lightning: Flash and Caribbean money',
+    href: 'https://medium.com/breez-technology/building-on-lightning-flash-is-reinventing-caribbean-money-with-the-breez-sdk-d26ef8b81fb8',
+  },
+  {
+    outlet: 'Blink',
+    title: 'How Bitcoin adoption came to the Caribbean',
+    href: 'https://www.blink.sv/blog/how-bitcoin-adoption-came-to-the-caribbean',
+  },
+];

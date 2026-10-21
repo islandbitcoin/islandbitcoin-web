@@ -1,7 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'How Island Bitcoin collects, uses, and protects your information.',
+};
 
 export default function PrivacyPage() {
   return (

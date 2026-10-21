@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import Reveal from '@/components/ui/Reveal';
 import { financialDocuments } from '@/lib/investor-content';
 
 const icons: Record<string, React.ReactNode> = {
@@ -40,58 +40,47 @@ export default function FinancialReports() {
   return (
     <section className="py-24 px-6 bg-zinc-900/30">
       <div className="max-w-5xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-        >
-          Latest Quarter | Q4 2025
-        </motion.h2>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <Reveal className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Latest Quarter | Q4 2025
+          </h2>
+        </Reveal>
+
+        <Reveal
+          offset={{ y: 0 }}
+          delay={0.2}
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8"
         >
           {financialDocuments.map((doc, index) => (
-            <motion.a
+            <Reveal
               key={doc.title}
-              href={doc.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 * index }}
+              delay={0.1 * index}
               className="group flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-3 text-white/60 group-hover:bg-orange-500 group-hover:text-white group-hover:-translate-y-1 transition-all duration-300">
-                {icons[doc.icon]}
-              </div>
-              <span className="text-xs text-white/60 leading-tight">
-                {doc.title}
-              </span>
-              <span className="text-[10px] text-white/30 mt-1">coming soon</span>
-            </motion.a>
+              <a
+                href={doc.href}
+                className="group flex flex-col items-center text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-3 text-white/60 group-hover:bg-orange-500 group-hover:text-white group-hover:-translate-y-1 transition-all duration-300">
+                  {icons[doc.icon]}
+                </div>
+                <span className="text-xs text-white/60 leading-tight">
+                  {doc.title}
+                </span>
+                <span className="text-[10px] text-white/40 mt-1">coming soon</span>
+              </a>
+            </Reveal>
           ))}
-        </motion.div>
+        </Reveal>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
+        <Reveal offset={{ y: 0 }} delay={0.4} className="text-center mt-12">
           <a
             href="#"
             className="inline-block px-6 py-3 border border-orange-500 text-orange-400 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm font-medium"
           >
             View all results
           </a>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
