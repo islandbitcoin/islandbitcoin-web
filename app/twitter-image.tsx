@@ -1,6 +1,6 @@
+export const dynamic = "force-static";
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 
 export const alt = 'Island Bitcoin - Building the Circular Bitcoin Economy';
 export const size = {

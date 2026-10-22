@@ -57,3 +57,23 @@ The `Dockerfile` is a multi-stage build optimized for Next.js production:
 ## SSL / HTTPS
 
 SSL is handled automatically by **Caddy**. No manual cert management is required on the Next.js container.
+
+---
+
+## 2026-10-22: Migration to Cloudflare Pages
+
+The site is now built as a **static export** (`output: 'export'`) and deployed via
+**Cloudflare Pages** (GitHub-connected, auto-deploys from `main`).
+
+- Build command: `npm ci && npm run build` → output directory `out/`
+- Dynamic OG/Twitter/icon image routes are prerendered at build time and shipped
+  as static PNGs (`functions/` survives Pages builds untouched).
+- `functions/[[path]].js` (Pages Function) proxies:
+  - `/.well-known/lnurlp/*`
+  - `/.well-known/nostr.json`
+  - `/api/*`
+  to `lightning-server-sx3u4.ondigitalocean.app` (matches the old Caddy rules).
+- All other requests fall through to static assets via `env.ASSETS.fetch`.
+
+The old Docker/Caddy path (below) is retained for reference only — the droplet
+container no longer needs rebuilding for site updates.
