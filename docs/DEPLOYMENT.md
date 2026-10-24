@@ -75,5 +75,5 @@ The site is now built as a **static export** (`output: 'export'`) and deployed v
   to `lightning-server-sx3u4.ondigitalocean.app` (matches the old Caddy rules).
 - All other requests fall through to static assets via `env.ASSETS.fetch`.
 
-The old Docker/Caddy path (below) is retained for reference only — the droplet
+The old Docker/Caddy path (below) is retained for reference only. The droplet
 container no longer needs rebuilding for site updates.
